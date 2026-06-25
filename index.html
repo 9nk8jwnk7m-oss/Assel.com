@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASSEL  </title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div id="game-container">
+
+        <div id="scene-1" class="scene active">
+            <div class="door door-left"></div>
+            <button id="start-btn" class="pixel-btn">START</button>
+            <div class="door door-right"></div>
+        </div>
+
+        <div id="scene-2" class="scene">
+            <div class="top-hud">
+                <div class="hearts" id="hud-hearts">
+                    <span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span>
+                </div>
+                <div>🎮 HP: 100%</div>
+            </div>
+            <h1 class="title-main" id="main-birthday-title">HAPPY<br>BIRTHDAY!</h1>
+            <p class="title-sub" id="level-unlocked-text">LEVEL 21 UNLOCKED!</p>
+            <button id="continue-btn" class="pixel-btn">CONTINUE</button>
+        </div>
+
+        <div id="scene-3" class="scene">
+            <div class="top-hud">
+                <div class="hearts" id="quest-hearts">
+                    <span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span><span class="heart">♥</span>
+                </div>
+                <div id="quest-score">STARS: ⭐0</div>
+            </div>
+
+            <div class="dialogue-box">
+                <p class="dialogue-text" id="dialogue-output"></p>
+            </div>
+
+            <div class="gif-container" id="gif-wrapper">
+                <img id="quest-gif" src="" alt="Quest Animation">
+            </div>
+
+            <div class="quiz-options" id="options-container"></div>
+
+            <div class="pixel-grass"></div>
+        </div>
+
+        <div id="scene-4" class="scene">
+            <div class="dialogue-box" style="margin-bottom: 20px;">
+                <p class="dialogue-text" id="final-char-text"></p>
+            </div>
+            
+            <div class="love-letter">
+                <h2 style="font-size: 12px; color: #FF6B97; margin-bottom: 15px; text-align:center;">💖 LOVE LETTER 💖</h2>
+                <p class="letter-text" id="congrats-letter-text"></p>
+                
+                <div style="display:flex; justify-content:center; margin-top:20px;">
+                    <div class="pixel-photo-frame" id="photo-frame">
+                        <img id="couple-photo" src="" alt="Our Photo">
+                    </div>
+                </div>
+            </div>
+            
+            <audio id="bg-music" loop>
+                <source id="music-source" src="duvet.MP3" type="audio/mpeg">
+            </audio>
+            <div class="mini-player" id="player-status" style="display:none;">🎵 Music Player: Active</div>
+        </div>
+
+    </div>
+
+    <script src="index.js"></script>
+</body>
+</html>
