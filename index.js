@@ -6,15 +6,12 @@ const CONFIG = {
     
     photoUrl: "project/assel.jpg", 
     
-    // ВПИШИ СЮДА ТОЧНОЕ НАЗВАНИЕ ФАЙЛА ИЗ ПАПКИ (например: "music.mp3")
     musicUrl: "duvet.MP3", 
     
-    // --- ДИНАМИЧЕСКИЕ ГИФКИ ДЛЯ СОСТОЯНИЙ ---
     gifDefault: "project/cat.gif",  
     gifSuccess: "project/catwin.gif",  
     gifError: "project/sadcat.gif",     
 
-    // Вопросы викторины
     questions: [
         {
             question: "На кого похожа наша химичка?",
@@ -37,19 +34,14 @@ const CONFIG = {
     ]
 };
 
-/* ==========================================================================
-   ГЛОБАЛЬНЫЕ ПЕРЕМЕННЫЕ И ИНИЦИАЛИЗАЦИЯ
-   ========================================================================== */
 let currentQuestionIndex = 0;
 let hp = 5;
 
-// Привязка данных из CONFIG
 document.getElementById('level-unlocked-text').innerText = `LEVEL ${CONFIG.age} UNLOCKED!`;
 document.getElementById('couple-photo').src = CONFIG.photoUrl;
 document.getElementById('congrats-letter-text').innerText = CONFIG.loveLetter;
 document.getElementById('quest-gif').src = CONFIG.gifDefault;
 
-// Загружаем аудио заранее
 const audio = document.getElementById('bg-music');
 audio.src = CONFIG.musicUrl;
 audio.volume = 0.8;
@@ -76,13 +68,7 @@ function typeWriter(text, elementId, speed = 40, callback = null) {
     type();
 }
 
-/* ==========================================================================
-   УПРАВЛЕНИЕ СЦЕНАМИ И ТРИГГЕРЫ
-   ========================================================================== */
-
-// Клик по START — Включает музыку и открывает двери
 document.getElementById('start-btn').addEventListener('click', () => {
-    // Включение музыки СРАЗУ на клике (разрешено браузерами)
     audio.play()
         .then(() => {
             document.getElementById('player-status').style.display = 'block';
@@ -102,10 +88,6 @@ document.getElementById('continue-btn').addEventListener('click', () => {
     switchScene(3);
     startQuestIntro();
 });
-
-/* ==========================================================================
-   ЛОГИКА КВЕСТА
-   ========================================================================== */
 
 function startQuestIntro() {
     const introText1 = `Привет, ${CONFIG.targetName}! Чтобы забрать свой подарок, тебе нужно пройти проверку на знание вопросов...`;
