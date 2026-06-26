@@ -1,6 +1,3 @@
-/* ==========================================================================
-   1. СБРОС СТИЛЕЙ И БАЗОВЫЕ НАСТРОЙКИ
-   ========================================================================== */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -19,7 +16,6 @@ body {
     align-items: center;
 }
 
-/* Контейнер игры с фиксированным ретро-соотношением сторон */
 #game-container {
     position: relative;
     width: 100%;
@@ -39,7 +35,6 @@ body {
     }
 }
 
-/* Общие стили для сцен */
 .scene {
     position: absolute;
     top: 0;
@@ -58,7 +53,6 @@ body {
     display: flex;
 }
 
-/* Пиксельные 8-bit кнопки */
 .pixel-btn {
     font-family: 'Press Start 2P', cursive;
     font-size: 14px;
@@ -84,9 +78,6 @@ body {
     box-shadow: 0 0px 0 #b3395d;
 }
 
-/* ==========================================================================
-   2. СЦЕНА 1: ЭКРАН ЗАГРУЗКИ / СТАРТ
-   ========================================================================== */
 #scene-1 {
     background-color: #FF6B97;
     z-index: 10;
@@ -114,13 +105,9 @@ body {
     width: auto;
 }
 
-/* Анимация раскрытия дверей */
 .doors-open .door-left { transform: translateX(-100%); }
 .doors-open .door-right { transform: translateX(100%); }
 
-/* ==========================================================================
-   3. СЦЕНА 2: ПРИВЕТСТВИЕ (ГЛАВНОЕ МЕНЮ)
-   ========================================================================== */
 #scene-2 {
     background-color: #FFF0F5;
     background-image: 
@@ -175,14 +162,11 @@ body {
     to { transform: translateY(-10px); }
 }
 
-/* ==========================================================================
-   4. СЦЕНА 3: ДИАЛОГ И КВЕСТ (ВИКТОРИНА) - ОБНОВЛЕННЫЙ
-   ========================================================================= */
 #scene-3 {
     background: #FFF0F5;
     justify-content: flex-start;
     padding-top: 60px;
-    position: relative; /* База для абсолютных элементов */
+    position: relative; 
 }
 
 .pixel-grass {
@@ -205,7 +189,7 @@ body {
     text-align: left;
     position: relative;
     box-shadow: 0 4px 0 rgba(0,0,0,0.1);
-    z-index: 5; /* Текст всегда поверх гифки */
+    z-index: 5; 
 }
 
 .dialogue-text {
@@ -215,14 +199,13 @@ body {
     word-wrap: break-word;
 }
 
-/* Жёстко фиксированный контейнер для GIF на заднем плане */
 .gif-container {
     position: absolute;
-    top: 155px;        /* Фиксированный отступ сверху, прямо под диалогом */
+    top: 155px;        
     left: 50%;
     transform: translateX(-50%);
-    width: 200px;      /* Жесткая ширина */
-    height: 160px;     /* Жесткая высота */
+    width: 200px;     
+    height: 160px;     
     display: flex;
     justify-content: center;
     align-items: center;
@@ -230,8 +213,8 @@ body {
     border: none;                  
     box-shadow: none;              
     overflow: hidden;
-    z-index: 2;        /* Ниже кнопок и диалога */
-    pointer-events: none; /* Чтобы клики проходили сквозь гифку на кнопки */
+    z-index: 2;        
+    pointer-events: none; 
 }
 
 .gif-container img {
@@ -241,20 +224,17 @@ body {
     image-rendering: pixelated; 
 }
 
-/* Варианты ответов перекрывают гифку, если не влезают */
+
 .quiz-options {
     position: absolute;
-    bottom: 50px;      /* Закрепляем кнопки чуть выше травы */
+    bottom: 50px;      
     width: 90%;
     display: flex;
     flex-direction: column;
     gap: 5px;
-    z-index: 6;        /* Кнопки гарантированно поверх гифки */
+    z-index: 6;        
 }
 
-/* ==========================================================================
-   5. СЦЕНА 4: ФИНАЛ (ЛЮБОВНОЕ ПИСЬМО)
-   ========================================================================== */
 #scene-4 {
     background-color: #FFB7CE;
     overflow-y: auto;
